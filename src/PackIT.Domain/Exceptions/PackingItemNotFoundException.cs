@@ -1,6 +1,6 @@
 ﻿using PackIT.Shared.Abstractions.Exceptions;
 
-namespace PackIT.Domain.Entities;
+namespace PackIT.Domain.Exceptions;
 internal class PackingItemNotFoundException : PackItException
 {
     public string ItemName { get; }

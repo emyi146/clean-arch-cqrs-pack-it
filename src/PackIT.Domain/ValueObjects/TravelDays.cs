@@ -1,4 +1,6 @@
-﻿namespace PackIT.Domain.ValueObjects;
+﻿using PackIT.Domain.Exceptions;
+
+namespace PackIT.Domain.ValueObjects;
 
 public record TravelDays
 {
