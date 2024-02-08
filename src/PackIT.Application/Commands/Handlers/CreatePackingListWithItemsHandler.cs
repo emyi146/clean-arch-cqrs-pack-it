@@ -9,25 +9,28 @@ namespace PackIT.Application.Commands;
 public class CreatePackingListWithItemsHandler(
     IPackingListRepository repository,
     IPackingListFactory factory,
-    IPackingListReadService readService) : ICommandHandler<CreatePackingListWithItems>
+    IPackingListReadService readService,
+    IWeatherService weatherService) : ICommandHandler<CreatePackingListWithItems>
 {
     private readonly IPackingListRepository _repository = repository;
     private readonly IPackingListFactory _factory = factory;
     private readonly IPackingListReadService _readService = readService;
+    private readonly IWeatherService _weatherService = weatherService;
 
     public async Task HandleAsync(CreatePackingListWithItems command)
     {
-        var (id, name, days, gender, localization) = command;
+        var (id, name, days, gender, localizationWriteModel) = command;
 
         if (await _readService.ExistsByNameAsync(name))
         {
             throw new PackingListAlreadyExistsExceptions(name);
         }
 
-        var (city, country) = localization;
+        var localization = new Localization(localizationWriteModel.City, localizationWriteModel.Country);
+        var weather = await _weatherService.GetWeatherAsync(localization) ?? throw new MissingLocalizationWeatherException(localization);
+        
         var packingList = _factory.CreateWithDefaultItems(
-            // TODO: Add weather service to get temperature.
-            id, name, days, gender, 10d, Localization.Create($"{city},{country}"));
+            id, name, days, gender, weather.Temperature, localization);
 
         await _repository.AddAsync(packingList);
     }
