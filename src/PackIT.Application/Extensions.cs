@@ -11,7 +11,6 @@ public static class Extensions
         services.AddCommands();
         services.AddSingleton<IPackingListFactory, PackingListFactory>();
 
-
         // Add Policies, using Scrutor, a NuGet package,
         // to scan the assembly for classes that implement
         // IPackingItemsPolicy<> and register them as services.

@@ -1,9 +1,9 @@
 ﻿using PackIT.Shared.Abstractions.Exceptions;
 
 namespace PackIT.Application.Exceptions;
-internal class PackingListAlreadyExistsExceptions : PackItException
+internal class PackingListAlreadyExistsException : PackItException
 {
-    public PackingListAlreadyExistsExceptions(string name)
+    public PackingListAlreadyExistsException(string name)
         : base($"Packing list with name '{name}' already exists.")
     {
     }

@@ -6,11 +6,12 @@ using PackIT.Domain.ValueObjects;
 using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands;
-public class CreatePackingListWithItemsHandler(
+internal sealed class CreatePackingListWithItemsHandler(
     IPackingListRepository repository,
     IPackingListFactory factory,
     IPackingListReadService readService,
-    IWeatherService weatherService) : ICommandHandler<CreatePackingListWithItems>
+    IWeatherService weatherService
+    ) : ICommandHandler<CreatePackingListWithItems>
 {
     private readonly IPackingListRepository _repository = repository;
     private readonly IPackingListFactory _factory = factory;
@@ -23,12 +24,12 @@ public class CreatePackingListWithItemsHandler(
 
         if (await _readService.ExistsByNameAsync(name))
         {
-            throw new PackingListAlreadyExistsExceptions(name);
+            throw new PackingListAlreadyExistsException(name);
         }
 
         var localization = new Localization(localizationWriteModel.City, localizationWriteModel.Country);
         var weather = await _weatherService.GetWeatherAsync(localization) ?? throw new MissingLocalizationWeatherException(localization);
-        
+
         var packingList = _factory.CreateWithDefaultItems(
             id, name, days, gender, weather.Temperature, localization);
 
