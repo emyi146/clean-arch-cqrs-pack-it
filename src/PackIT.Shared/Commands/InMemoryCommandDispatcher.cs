@@ -2,7 +2,7 @@
 using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Shared.Commands;
-internal class InMemoryCommandDispatcher : ICommandDispatcher
+internal sealed class InMemoryCommandDispatcher : ICommandDispatcher
 {
     private readonly IServiceProvider _serviceProvider;
 

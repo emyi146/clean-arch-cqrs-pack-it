@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PackIT.Shared.Abstractions.Commands;
-using PackIT.Shared.Commands;
 using System.Reflection;
 
-namespace PackIT.Shared;
+namespace PackIT.Shared.Commands;
 public static class Extensions
 {
     public static IServiceCollection AddCommands(this IServiceCollection services)
@@ -11,7 +10,7 @@ public static class Extensions
         var assembly = Assembly.GetCallingAssembly();
 
         services.AddSingleton<ICommandDispatcher, InMemoryCommandDispatcher>();
-        
+
         // Add Commands, using Scrutor, a NuGet package,
         // to scan the assembly for classes that implement
         // ICommandHandler<TCommand> and register them as services.
