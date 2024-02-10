@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PackIT.Application.Services;
 using PackIT.Domain.Repositories;
 using PackIT.Infrastructure.EF.Contexts;
+using PackIT.Infrastructure.EF.Initializer;
 using PackIT.Infrastructure.EF.Options;
 using PackIT.Infrastructure.EF.Repositories;
 using PackIT.Infrastructure.EF.Services;
@@ -16,6 +17,7 @@ internal static class Extensions
     {
         services.AddScoped<IPackingListRepository, PostgresPackingListRepository>();
         services.AddScoped<IPackingListReadService, PostgresPackingListReadService>();
+        services.AddHostedService<AppInitializer>();
 
         var options = configuration.GetOptions<PostgresOptions>("Postgres");
         services.AddDbContext<ReadDbContext>(ctx => ctx.UseNpgsql(options.ConnectionString));

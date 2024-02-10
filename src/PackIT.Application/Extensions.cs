@@ -17,7 +17,7 @@ public static class Extensions
         services.Scan(s => s.FromAssemblies(typeof(IPackingItemsPolicy).Assembly)
             .AddClasses(c => c.AssignableTo<IPackingItemsPolicy>())
             .AsImplementedInterfaces()
-            .WithScopedLifetime());
+            .WithSingletonLifetime());
 
         return services;
     }

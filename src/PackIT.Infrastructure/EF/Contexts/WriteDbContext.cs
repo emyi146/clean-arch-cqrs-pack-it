@@ -2,7 +2,6 @@
 using PackIT.Domain.Entities;
 using PackIT.Domain.ValueObjects;
 using PackIT.Infrastructure.Config;
-using PackIT.Infrastructure.EF.Models;
 
 namespace PackIT.Infrastructure.EF.Contexts;
 internal sealed class WriteDbContext : DbContext
