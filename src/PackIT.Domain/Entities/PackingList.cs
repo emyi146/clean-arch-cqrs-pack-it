@@ -14,11 +14,17 @@ public class PackingList : AggregateRoot<PackingListId>
 
     private readonly LinkedList<PackingItem> _items = new();
 
-    internal PackingList(PackingListId id, PackingListName name, Localization localization)
+    private PackingList(PackingListId id, PackingListName name, Localization localization)
     {
         Id = id;
         _name = name;
         _localization = localization;
+    }
+
+    // Required by EF Core (only coupled requirement)
+    private PackingList()
+    {
+
     }
 
     public void AddItem(PackingItem item)
