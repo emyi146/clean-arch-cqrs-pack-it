@@ -14,7 +14,7 @@ public class PackingList : AggregateRoot<PackingListId>
 
     private readonly LinkedList<PackingItem> _items = new();
 
-    private PackingList(PackingListId id, PackingListName name, Localization localization)
+    internal PackingList(PackingListId id, PackingListName name, Localization localization)
     {
         Id = id;
         _name = name;
