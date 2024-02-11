@@ -4,7 +4,7 @@ using PackIT.Domain.ValueObjects;
 using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands;
-internal sealed class AddPackingItemHandler(IPackingListRepository repository) : ICommandHandler<AddPackingItem>
+public class AddPackingItemHandler(IPackingListRepository repository) : ICommandHandler<AddPackingItem>
 {
     private readonly IPackingListRepository _repository = repository;
 

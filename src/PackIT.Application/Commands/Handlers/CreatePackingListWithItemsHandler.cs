@@ -6,7 +6,7 @@ using PackIT.Domain.ValueObjects;
 using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands;
-internal sealed class CreatePackingListWithItemsHandler(
+public class CreatePackingListWithItemsHandler(
     IPackingListRepository repository,
     IPackingListFactory factory,
     IPackingListReadService readService,

@@ -3,7 +3,7 @@ using PackIT.Domain.Repositories;
 using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands;
-internal sealed class PackItemHandler(IPackingListRepository repository) : ICommandHandler<PackItem>
+public class PackItemHandler(IPackingListRepository repository) : ICommandHandler<PackItem>
 {
     private readonly IPackingListRepository _repository = repository;
 

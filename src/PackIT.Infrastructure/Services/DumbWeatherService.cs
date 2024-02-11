@@ -6,6 +6,6 @@ namespace PackIT.Infrastructure.Services;
 internal sealed class DumbWeatherService : IWeatherService
 {
 
-    public Task<WeatherDto> GetWeatherAsync(Localization localization)
+    public Task<WeatherDto?> GetWeatherAsync(Localization localization)
         => Task.FromResult(new WeatherDto(Random.Shared.Next(5, 30)));
 }
