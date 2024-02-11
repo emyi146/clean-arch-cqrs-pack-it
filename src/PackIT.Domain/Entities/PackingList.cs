@@ -32,7 +32,6 @@ public class PackingList : AggregateRoot<PackingListId>
         _localization = localization;
     }
 
-
     public void AddItem(PackingItem item)
     {
         var alreadyExists = _items.Any(i => i.Name == item.Name);

@@ -15,13 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Application", "PackI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Infrastructure", "PackIT.Infrastructure\PackIT.Infrastructure.csproj", "{09104D6B-15ED-4285-92F8-A4FE6335EC2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Api", "PackIT.Api\PackIT.Api.csproj", "{93573A21-DB43-4E88-BB8E-60C0A0CC7E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Api", "PackIT.Api\PackIT.Api.csproj", "{93573A21-DB43-4E88-BB8E-60C0A0CC7E11}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{85AE5CB1-D12C-46A8-9287-52086681DF82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Shared", "PackIT.Shared\PackIT.Shared.csproj", "{3C114B8A-4CA0-4CC6-8AE0-3FF8F9D75ECC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Shared", "PackIT.Shared\PackIT.Shared.csproj", "{3C114B8A-4CA0-4CC6-8AE0-3FF8F9D75ECC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Shared.Abstractions", "PackIT.Shared.Abstractions\PackIT.Shared.Abstractions.csproj", "{EA3972F7-DCF7-417A-ACD8-9D13F197EB49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Shared.Abstractions", "PackIT.Shared.Abstractions\PackIT.Shared.Abstractions.csproj", "{EA3972F7-DCF7-417A-ACD8-9D13F197EB49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.UnitTests", "..\tests\PackIT.UnitTests\PackIT.UnitTests.csproj", "{0530C234-1C8C-4B1E-B823-414117AE9AE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{EA3972F7-DCF7-417A-ACD8-9D13F197EB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA3972F7-DCF7-417A-ACD8-9D13F197EB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA3972F7-DCF7-417A-ACD8-9D13F197EB49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0530C234-1C8C-4B1E-B823-414117AE9AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0530C234-1C8C-4B1E-B823-414117AE9AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0530C234-1C8C-4B1E-B823-414117AE9AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0530C234-1C8C-4B1E-B823-414117AE9AE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
