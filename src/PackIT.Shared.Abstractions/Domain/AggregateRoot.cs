@@ -15,11 +15,12 @@ public class AggregateRoot<T>
             Version++;
             _versionIncremented = true;
 
-            _events.Add(@event);
         }
+
+        _events.Add(@event);
     }
 
-    public void ClearEvents () => _events.Clear();
+    public void ClearEvents() => _events.Clear();
 
     protected void IncrementVersion()
     {

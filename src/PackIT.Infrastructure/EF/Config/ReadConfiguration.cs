@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PackIT.Infrastructure.EF.Models;
 
-namespace PackIT.Infrastructure.Config;
+namespace PackIT.Infrastructure.EF.Config;
 internal sealed class ReadConfiguration :
     IEntityTypeConfiguration<PackingListReadModel>,
     IEntityTypeConfiguration<PackingItemReadModel>

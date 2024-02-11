@@ -14,6 +14,17 @@ public class PackingList : AggregateRoot<PackingListId>
 
     private readonly LinkedList<PackingItem> _items = new();
 
+    private PackingList(PackingListId id, PackingListName name, Localization localization, LinkedList<PackingItem> items)
+        : this(id, name, localization)
+    {
+        _items = items;
+    }
+
+    // Required by EF Core (only coupled requirement)
+    private PackingList()
+    {
+    }
+
     internal PackingList(PackingListId id, PackingListName name, Localization localization)
     {
         Id = id;
@@ -21,11 +32,6 @@ public class PackingList : AggregateRoot<PackingListId>
         _localization = localization;
     }
 
-    // Required by EF Core (only coupled requirement)
-    private PackingList()
-    {
-
-    }
 
     public void AddItem(PackingItem item)
     {

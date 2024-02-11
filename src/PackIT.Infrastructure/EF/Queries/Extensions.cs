@@ -10,7 +10,7 @@ internal static class Extensions
             Id = readModel.Id,
             Name = readModel.Name,
             Localization = readModel.Localization.AsDto(),
-            Items = readModel.Items?.Select(AsDto)?.ToList(),
+            Items = readModel.Items?.Select(pi => pi.AsDto())?.ToList(),
         };
 
     public static LocalizationDto AsDto(this LocalizationReadModel readModel)

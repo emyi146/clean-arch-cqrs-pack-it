@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PackIT.Domain.Entities;
 using PackIT.Domain.ValueObjects;
 
-namespace PackIT.Infrastructure.Config;
+namespace PackIT.Infrastructure.EF.Config;
 internal sealed class WriteConfiguration :
     IEntityTypeConfiguration<PackingList>,
     IEntityTypeConfiguration<PackingItem>
